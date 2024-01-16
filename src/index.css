@@ -97,3 +97,11 @@ button {
   font-size: small;
   text-align: center;
 }
+
+.popup {
+  display: none;
+  color: aliceblue;
+  position: absolute;
+  top: 60%;
+  left: 75%;
+}
