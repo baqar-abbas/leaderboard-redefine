@@ -2,6 +2,7 @@ import './index.css';
 
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2czXbR0HaMGgkDCOs2vR/scores';
 
+// Post request to the API
 const postData = async (user, score) => {
   const response = await fetch(url, {
     method: 'POST',
@@ -15,12 +16,14 @@ const postData = async (user, score) => {
   return data.result;
 };
 
+// GET request to get the data from the API
 const getData = async () => {
   const response = await fetch(url);
   const data = await response.json();
   return data.result;
 };
 
+// Displays data in the lists
 const displayOnUi = async (data) => {
   const ul = document.querySelector('.displayScore');
   ul.innerHTML = '';
@@ -31,11 +34,13 @@ const displayOnUi = async (data) => {
   });
 };
 
+// Refresh method that gets data and sends data to the displayOnUi method
 const refresh = async () => {
   const data = await getData();
   displayOnUi(data);
 };
 
+// Form event listener that post request on submit
 const form = document.querySelector('.form');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -53,6 +58,7 @@ form.addEventListener('submit', async (e) => {
   }, 2000);
 });
 
+// Refresh button that refreshes the page and calls the refresh method
 const refreshBtn = document.querySelector('.refreshbtn');
 refreshBtn.addEventListener('click', () => {
   window.location.reload();
