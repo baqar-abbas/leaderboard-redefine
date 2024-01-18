@@ -68,7 +68,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- [Live Demo Link](will be available soon)
+- [Live Demo Link](https://baqar-abbas.github.io/leaderboard-redefine/dist/)
 
 <!-- GETTING STARTED -->
 
