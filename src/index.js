@@ -1,6 +1,6 @@
 import './index.css';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2czXbR0HaMGgkDCOs2vR/scores';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/9stjAcDNjnK9zbU8NkG2/scores';
 
 // Post request to the API
 const postData = async (user, score) => {
@@ -45,6 +45,15 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const { user, score } = form.elements;
+  if (user.value === '' || score.value === '') {
+    const popup = document.querySelector('.popup');
+    popup.style.display = 'block';
+    popup.innerHTML = 'Please fill all the fields';
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 3000);
+    return;
+  }
   const data = await postData(user.value, score.value);
   refresh();
   form.reset();
@@ -55,7 +64,7 @@ form.addEventListener('submit', async (e) => {
   }, 1000);
   setTimeout(() => {
     popup.style.display = 'none';
-  }, 2000);
+  }, 3000);
 });
 
 // Refresh button that refreshes the page and calls the refresh method
