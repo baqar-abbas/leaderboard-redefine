@@ -1,0 +1,177 @@
+@font-face {
+  font-family: "Minecrafter.Alt";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/Minecrafter.Alt.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Minecrafter.Reg";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/Minecrafter.Reg.woff") format("woff");
+}
+
+:root {
+  --jazzberry-jam: #635b5f;
+}
+
+.heading-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem;
+  width: 100%;
+  height: 100px;
+}
+
+h1 {
+  margin-right: 60%;
+  font-size: 3rem;
+  font-family: "Minecrafter.Alt", sans-serif;
+}
+
+.neon {
+  animation: flicker 1.5s infinite alternate;
+  color: #d80246;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px rgb(170, 170, 170), 0 0 11px rgb(170, 170, 170), 0 0 19px rgb(170, 170, 170), 0 0 40px var(--jazzberry-jam), 0 0 80px var(--jazzberry-jam), 0 0 90px var(--jazzberry-jam), 0 0 100px #c04a85, 0 0 150px #c04a85;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  border: 4px solid rgb(9, 11, 26);
+  background: linear-gradient(134deg, rgba(22, 74, 170, 0.205) 5%, rgba(5, 17, 19, 0.65) 50%, rgba(182, 8, 23, 0.315) 95%), url('../images/ps4bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem;
+  width: 100%;
+}
+
+.subContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.scoreContainer {
+  width: 50%;
+}
+
+.recentScore {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  color: aliceblue;
+  animation-name: example;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  from { color: aliceblue; }
+  to { color: red; }
+}
+
+.displayScore {
+  background-image: url(../images/ps4Bg2.webp);
+  background-size: contain;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+  border: 5px solid black;
+  color: aliceblue;
+}
+
+.displayScore li {
+  font-size: 1.5rem;
+}
+
+.displayScore li:nth-child(even) {
+  background-color: rgba(181, 179, 177, 0.272);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form h2 {
+  margin-bottom: 1rem;
+  color: aliceblue;
+}
+
+input {
+  height: 2.5rem;
+  width: 16rem;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  width: 50%;
+  border-radius: 5px;
+  border: none;
+  margin-left: 50%;
+  padding: 0.75rem;
+  color: #dfbfbf;
+  background: #326bb0bc;
+  text-transform: uppercase;
+  font-family: "Games", sans-serif;
+  letter-spacing: 2px;
+  font-size: small;
+  text-align: center;
+}
+
+button:hover {
+  background: #326bb0;
+  color: #fff;
+}
+
+.popup {
+  display: none;
+  color: aliceblue;
+  position: absolute;
+  top: 85%;
+  left: 75%;
+}
